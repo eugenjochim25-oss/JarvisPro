@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Jarvis GUI v2</title></head>
+<body>
+<h1>Jarvis Pro GUI v2</h1>
+<input id="cmd" placeholder="Tippe etwas…"/>
+<button onclick="send()">Senden</button>
+<pre id="out"></pre>
+<script type="text/javascript" src="/eel.js"></script>
+<script>
+async function send(){
+    let c=document.getElementById("cmd").value;
+    let res=await eel.ask_jarvis(c)();
+    document.getElementById("out").innerText=res;
+}
+</script>
+</body>
+</html>
